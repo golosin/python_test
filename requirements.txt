@@ -1,2 +1,5 @@
+allure-pytest
+allure-python-commons
+async-generator
 pytest
-
+selenium
