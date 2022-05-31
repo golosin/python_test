@@ -39,4 +39,4 @@ jobs:
       run: |
         pytest test_t4
       env:
-+       DISPLAY: :99
+        DISPLAY: :99
