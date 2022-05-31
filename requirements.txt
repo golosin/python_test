@@ -1,1 +1,7 @@
 pytest
+<<<<<<< HEAD
+=======
+selenium
+allure-py
+allure-python-commons
+>>>>>>> 80732f9 (add file)
