@@ -1,6 +1,6 @@
 from Base.Base_functions import wait_of_element_located, login_T4
 from Base.Dictionary_xpath import init_dict_xpath_login
-import allure
+# import allure
 
 # Функция авторизации в системе
 # @allure.feature('Базовое тестирование')
