@@ -28,12 +28,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Prepare Selenium
-      - uses: actions/checkout@v2
-      - uses: nanasess/setup-chromedriver@v1
-        with:
-          # Optional: do not specify to match Chrome's version
-          chromedriver-version: '88.0.4324.96'
-      - run: chromedriver --url-base=/wd/hub &
+      uses: nanasess/setup-chromedriver@v1
+      with:
+        # Optional: do not specify to match Chrome's version
+        chromedriver-version: '88.0.4324.96'
+      run: chromedriver --url-base=/wd/hub &
     - name: Test with pytest
       run: |
         pytest test_t4
