@@ -17,7 +17,7 @@ def get_webdriver(get_chrome_options):
     options = get_chrome_options
     driver = webdriver.Remote(
         command_executor=f"http://localhost:9515/wd/hub",
-        options=options,
+        options=options
     )
     # driver = webdriver.Chrome(options=options)
     return driver
