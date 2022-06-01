@@ -7,7 +7,7 @@ from Base.Init_Test_Data import init_data
 @pytest.fixture
 def get_chrome_options():
     options = chrome_options()
-    options.add_argument('--headless')  # если не нужен UI браузер использовать headless
+    options.add_argument('headless')  # если не нужен UI браузер использовать headless
     # options.add_argument('--start-maximized')
     return options
 
@@ -16,7 +16,7 @@ def get_chrome_options():
 def get_webdriver(get_chrome_options):
     options = get_chrome_options
     driver = webdriver.Remote(
-        command_executor=f"http://127.0.0.1:4444/wd/hub",
+        command_executor=f"http://selenium__standalone-chrome:4444/wd/hub",
         options=options,
     )
     # driver = webdriver.Chrome(options=options)
