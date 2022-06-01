@@ -36,4 +36,4 @@ jobs:
     - run: chromedriver --url-base=/wd/hub &
     - name: Test with pytest
       run: |
-        pytest test_t4
+        pytest --alluredir=./allure-results test_t4
