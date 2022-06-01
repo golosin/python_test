@@ -37,3 +37,13 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --alluredir=./allure-results test_t4
+
+    - name: Test marketplace action
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      id: allure-report
+      with:
+        allure_results: build/allure-results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
