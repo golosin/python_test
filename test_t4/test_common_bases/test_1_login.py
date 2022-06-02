@@ -12,6 +12,7 @@ def test_login(get_driver, get_init_data):
     1) Авторизация в системе T4MP.v2
     2) Переход к листингу пайплайнов
     """
+
     # assert  1==1
     driver = get_driver
     dict_init_data = get_init_data
