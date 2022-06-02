@@ -14,6 +14,7 @@ def test_login(get_driver, get_init_data):
     """
 
 
+
     assert  1==1
     # driver = get_driver
     # dict_init_data = get_init_data
