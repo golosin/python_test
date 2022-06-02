@@ -43,8 +43,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --alluredir=./allure-results test_t4
-      env:
-       DISPLAY: :99
+#      env:
+#       DISPLAY: :99
 
     - name: Get Allure history
       uses: actions/checkout@v2
