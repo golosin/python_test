@@ -40,6 +40,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --alluredir=./allure-results test_t4
+        cat ./allure-results
 #      env:
 #       DISPLAY: :99
 
