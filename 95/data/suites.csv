@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Jun 02 18:52:47 GMT 2022","Thu Jun 02 18:52:47 GMT 2022","0","test_t4.test_common_bases","test_1_login","","","","test_login","
+    1) Авторизация в системе T4MP.v2
+    2) Переход к листингу пайплайнов
+    "
