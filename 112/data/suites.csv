@@ -1,0 +1,33 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jun 03 13:12:22 GMT 2022","Fri Jun 03 13:12:26 GMT 2022","4275","test_t4.test_common_bases","test_3_base_click_product_feed","","","","test_base_click_product_feed","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Product feed""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Product feed""
+    6) Возврат на страницу кубиков
+    "
+"broken","Fri Jun 03 13:12:36 GMT 2022","Fri Jun 03 13:13:38 GMT 2022","62103","test_t4.test_common_bases","test_5_base_click_published","","","","test_base_click_published","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Published products""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Published products""
+    6) Возврат на страницу кубиков
+    "
+"passed","Fri Jun 03 13:12:17 GMT 2022","Fri Jun 03 13:12:19 GMT 2022","2032","test_t4.test_common_bases","test_2_choice_pipeline","","","","test_choice_pipeline","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    "
+"passed","Fri Jun 03 13:12:29 GMT 2022","Fri Jun 03 13:12:33 GMT 2022","4301","test_t4.test_common_bases","test_4_base_click_edit_product","","","","test_base_click_edit_product","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Edit products""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Edit products""
+    6) Возврат на страницу кубиков
+    "
+"passed","Fri Jun 03 13:12:14 GMT 2022","Fri Jun 03 13:12:15 GMT 2022","939","test_t4.test_common_bases","test_1_login","","","","test_login","
+    1) Авторизация в системе T4MP.v2
+    2) Переход к листингу пайплайнов
+    "
