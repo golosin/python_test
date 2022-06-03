@@ -28,9 +28,9 @@ jobs:
         pipenv install
     - uses: actions/checkout@v2
     - uses: nanasess/setup-chromedriver@v1
-      with:
-        # Optional: do not specify to match Chrome's version
-        chromedriver-version: '101.0.4951.41'
+#      with:
+      # Optional: do not specify to match Chrome's version
+#        chromedriver-version: '101.0.4951.41'
     - run: |
         google-chrome --version
         export DISPLAY=:99
