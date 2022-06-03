@@ -73,7 +73,7 @@ def init_dict_xpath_base(dict_init_data):
         # 1й товар карточка -> Feed Products
         '3': "//span[@aria-label='arrow-left']",
         # общая страница -> Edit Products
-        '4': "//span[@aria-label='edit']",
+        '4': "//div[@data-test-id='editProducts']",
         # Edit Products -> 1й товар карточка
         '5': "//tbody[@class='ant-table-tbody']//tr[2]//td[2]/div/div/div[2]/div/div/a",
         # общая страница -> Published on marketplace
