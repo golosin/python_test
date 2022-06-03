@@ -1,0 +1,9 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jun 03 09:29:39 GMT 2022","Fri Jun 03 09:29:40 GMT 2022","1008","test_t4.test_common_bases","test_1_login","","","","test_login","
+    1) Авторизация в системе T4MP.v2
+    2) Переход к листингу пайплайнов
+    "
+"passed","Fri Jun 03 09:29:42 GMT 2022","Fri Jun 03 09:29:44 GMT 2022","2104","test_t4.test_common_bases","test_2_choice_pipeline","","","","test_choice_pipeline","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    "
