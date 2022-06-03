@@ -7,7 +7,7 @@ from Base.Init_Test_Data import init_data
 @pytest.fixture
 def get_chrome_options():
     options = chrome_options()
-    options.add_argument('headless')  # если не нужен UI браузер использовать headless
+    options.add_argument('Chrome')  # если не нужен UI браузер использовать headless
     # options.add_argument('--start-maximized')
     return options
 
