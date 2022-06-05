@@ -8,6 +8,7 @@ from Base.Init_Test_Data import init_data
 def get_chrome_options():
     options = chrome_options()
     options.add_argument('--headless')  # если не нужен UI браузер использовать headless
+    options.add_argument("window-size=1920,1080")
     # options.add_argument('--start-maximized')
     return options
 

@@ -29,7 +29,6 @@ def test_base_click_published(get_driver, get_init_data):
     # 2) Выбор пайплайна и МП
     choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
 
-    time.sleep(60)
     # 3) общая страница -> Published on marketplace (клик)
     product_feed = wait_of_element_located(dict_xpath_base['6'], driver)
     product_feed.click()
