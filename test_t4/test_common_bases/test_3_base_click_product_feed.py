@@ -31,19 +31,15 @@ def test_base_click_product_feed(get_driver, get_init_data):
     # 3) общая страница -> Feed Products (клик)
     product_feed = wait_of_element_located(dict_xpath_product_feed['15'], driver)
     product_feed.click()
-    # time.sleep(2)
 
     # 4) Feed Products -> 1й товар карточка (клик)
     product_feed = wait_of_element_located(dict_xpath_base['2'], driver)
     product_feed.click()
-    # time.sleep(2)
 
     # 5) 1й товар карточкаа -> Feed Products (клик)
     product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
     product_feed.click()
-    # time.sleep(2)
 
     # 6) Feed Products -> общая страница (клик)
     product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
     product_feed.click()
-    # time.sleep(2)

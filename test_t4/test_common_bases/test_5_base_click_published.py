@@ -32,21 +32,18 @@ def test_base_click_published(get_driver, get_init_data):
     # 3) общая страница -> Published on marketplace (клик)
     product_feed = wait_of_element_located(dict_xpath_base['6'], driver)
     product_feed.click()
-    # time.sleep(2)
 
     # 4) Published on marketplace -> 1й товар карточка (клик)
     product_feed = wait_of_element_located(dict_xpath_base['5'], driver)
     product_feed.click()
-    # time.sleep(2)
+
     # 5) 1й товар карточкаа -> Published on marketplace (клик)
     product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
     product_feed.click()
-    # time.sleep(2)
 
     # 6) Published on marketplace -> общая страница (клик)
     product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
     product_feed.click()
-    # time.sleep(2)
 
 
 
