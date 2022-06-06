@@ -72,7 +72,6 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-
   sending-email:
     runs-on: ubuntu-latest
     steps:
