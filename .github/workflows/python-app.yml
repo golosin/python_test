@@ -76,7 +76,7 @@ jobs:
   sending-email:
     runs-on: ubuntu-latest
     steps:
-      - name: ✨ Send email, you star
+      - name: Send email, test report
         uses: dawidd6/action-send-mail@v1.3.0
         with:
           server_address: smtp.gmail.com
@@ -84,7 +84,7 @@ jobs:
           username: ${{ secrets.GMAIL_LOGIN }}
           password: ${{ secrets.GMAIL_PASS }}
           subject: Report Email
-          body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
+          body: https://golosin.github.io/python_test/
           to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
           from: ${{ secrets.GMAIL_LOGIN }}
           secure: true
