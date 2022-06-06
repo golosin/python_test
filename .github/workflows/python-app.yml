@@ -21,7 +21,7 @@ jobs:
       - run: |
           echo "<h1> Opprtunity from  </h1> <div> <h2>Job Description</h2><div>ляляля </div></div><div>Interested students please apply here: <div>" > temp.html
       - name: Send email, test report
-        uses: dawidd6/action-send-mail@v1.3.0
+        uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
