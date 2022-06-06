@@ -72,21 +72,17 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-
-  sending-email:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Send email, test report
-        uses: dawidd6/action-send-mail@v1.3.0
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.GMAIL_LOGIN }}
-          password: ${{ secrets.GMAIL_PASS }}
-          subject: Report Email
-          body: https://golosin.github.io/python_test/
-          to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
-          from: ${{ secrets.GMAIL_LOGIN }}
-          secure: true
-          ignore_cert: true
-          convert_markdown: true
+    - name: Send email, test report
+      uses: dawidd6/action-send-mail@v1.3.0
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.GMAIL_LOGIN }}
+        password: ${{ secrets.GMAIL_PASS }}
+        subject: Report Email
+        body: https://golosin.github.io/python_test/
+        to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
+        from: ${{ secrets.GMAIL_LOGIN }}
+        secure: true
+        ignore_cert: true
+        convert_markdown: true
