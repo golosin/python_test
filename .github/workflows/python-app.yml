@@ -26,7 +26,8 @@ jobs:
           username: ${{ secrets.GMAIL_LOGIN }}
           password: ${{ secrets.GMAIL_PASS }}
           subject: Report Email
-          body: https://golosin.github.io/python_test/
+#          body: https://golosin.github.io/python_test/
+          body: "<h1> https://golosin.github.io/python_test/ </h1> <div> <h2>Job Description</h2><div>"
           to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
           from: ${{ secrets.GMAIL_LOGIN }}
           secure: true
