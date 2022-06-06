@@ -72,6 +72,7 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
+
     - name: Send email
       uses: dawidd6/action-send-mail@v3.6.0
       with:
