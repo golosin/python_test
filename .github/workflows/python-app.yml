@@ -81,9 +81,12 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: Vjatcheslav Vjatcheslav
+          username: ${{ secrets.GMAIL_LOGIN }}
           password: ${{ secrets.GMAIL_PASS }}
-          subject: Your a star ✨
+          subject: Report Email
           body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
           to: ${{ secrets.GMAIL_LOGIN }}
           from: ${{ secrets.GMAIL_LOGIN }}
+          secure: true
+          ignore_cert: true
+          convert_markdown: true
