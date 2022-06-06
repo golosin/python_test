@@ -15,7 +15,7 @@ jobs:
   sending-email:
     runs-on: ubuntu-latest
     needs: [ build ]
-    if: always() && needs.build.test == failure
+    if: always() && needs.build.test == "failure"
     steps:
       - name: Send email, test report
         uses: dawidd6/action-send-mail@v1.3.0
