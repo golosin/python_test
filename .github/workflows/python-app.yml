@@ -15,11 +15,10 @@ jobs:
   sending-email:
     runs-on: ubuntu-latest
     needs: [ build ]
-#    if: needs.build.result  == 'failure'
     if: failure()
     steps:
       - run: |
-          echo "<h1> Тесты прошли с ошибкой!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2><div>ляляля </div></div>" > temp.html
+          echo "<h1> Тесты прошли с ошибкой!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2></div>" > temp.html
       - name: Send email, test report
         uses: dawidd6/action-send-mail@v3
         with:
