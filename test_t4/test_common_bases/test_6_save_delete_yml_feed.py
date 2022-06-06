@@ -28,6 +28,7 @@ def test_create_delete_yml_feed(get_driver, get_init_data):
     17) Проверка сохраненного "Name" фида
     """
 
+
     driver = get_driver
     dict_init_data = get_init_data
     dict_xpath_login = init_dict_xpath_login(dict_init_data)
