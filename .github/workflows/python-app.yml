@@ -18,6 +18,8 @@ jobs:
 #    if: needs.build.result  == 'failure'
     if: failure()
     steps:
+      - run: |
+          echo "<h1> Opprtunity from `echo $com` </h1> <div> <h2>Job Description</h2><div>`echo $jd` </div></div><div>Interested students please apply here: `echo $reg`<div>" > temp.html
       - name: Send email, test report
         uses: dawidd6/action-send-mail@v1.3.0
         with:
@@ -27,7 +29,7 @@ jobs:
           password: ${{ secrets.GMAIL_PASS }}
           subject: Report Email
 #          body: https://golosin.github.io/python_test/
-          body: <h1> "https://golosin.github.io/python_test/" </h1>
+          html_body: file://temp.html
           to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
           from: ${{ secrets.GMAIL_LOGIN }}
           secure: true
