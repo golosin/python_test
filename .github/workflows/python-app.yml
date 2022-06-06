@@ -71,3 +71,14 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
+
+    - name: Send email
+      uses: dawidd6/action-send-mail@v3.6.0
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.GMAIL_LOGIN}}
+        password: ${{secrets.GMAIL_PASS}}
+        subject: Message from github actions.
+        to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
+        from: Vjatcheslav
