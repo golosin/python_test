@@ -74,12 +74,13 @@ jobs:
 
 
     - name: Send email
-      uses: dawidd6/action-send-mail@v3.6.0
+      uses: dawidd6/action-send-mail@v3
       with:
         server_address: smtp.gmail.com
         server_port: 465
         username: ${{secrets.GMAIL_LOGIN}}
         password: ${{secrets.GMAIL_PASS}}
         subject: Message from github actions.
+        body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
         to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
         from: Vjatcheslav
