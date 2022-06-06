@@ -19,7 +19,7 @@ jobs:
     if: failure()
     steps:
       - run: |
-          echo "<h1> Opprtunity from `echo $com` </h1> <div> <h2>Job Description</h2><div>`echo $jd` </div></div><div>Interested students please apply here: `echo $reg`<div>" > temp.html
+          echo "<h1> Opprtunity from  </h1> <div> <h2>Job Description</h2><div>ляляля </div></div><div>Interested students please apply here: <div>" > temp.html
       - name: Send email, test report
         uses: dawidd6/action-send-mail@v1.3.0
         with:
