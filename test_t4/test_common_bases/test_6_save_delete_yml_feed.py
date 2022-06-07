@@ -82,25 +82,25 @@ def test_create_delete_yml_feed(get_driver, get_init_data):
     arrow_left.click()
 
     # 13) Feeds list -> Edit feed config (клик)
-    # table_edit = wait_of_element_located(dict_xpath_product_feed['12'], driver)
-    # table_edit.click()
+    table_edit = wait_of_element_located(dict_xpath_product_feed['12'], driver)
+    table_edit.click()
 
     # 14) Проверка сохраненного "Url products"
-    # url_input = wait_of_element_located(dict_xpath_product_feed['4'], driver)
-    # val = url_input.get_attribute("value")
-    # assert val == dict_init_data["yml_url_location"]
+    url_input = wait_of_element_located(dict_xpath_product_feed['4'], driver)
+    val = url_input.get_attribute("value")
+    assert val == dict_init_data["yml_url_location"]
 
     # 15) Проверка сохраненного "Url prices"
-    # url_input = wait_of_element_located(dict_xpath_product_feed['5'], driver)
-    # val = url_input.get_attribute("value")
-    # assert val == dict_init_data["yml_url_location"]
+    url_input = wait_of_element_located(dict_xpath_product_feed['5'], driver)
+    val = url_input.get_attribute("value")
+    assert val == dict_init_data["yml_url_location"]
 
     # 16) Проверка сохраненного "Url stocks"
-    # url_input = wait_of_element_located(dict_xpath_product_feed['6'], driver)
-    # val = url_input.get_attribute("value")
-    # assert val == dict_init_data["yml_url_location"]
+    url_input = wait_of_element_located(dict_xpath_product_feed['6'], driver)
+    val = url_input.get_attribute("value")
+    assert val == dict_init_data["yml_url_location"]
 
     # 17) Проверка сохраненного "Name" фида
-    # name_input = wait_of_element_located(dict_xpath_product_feed['3'], driver)
-    # val = name_input.get_attribute("value")
-    # assert val == dict_init_data["yml_name_feed"]
+    name_input = wait_of_element_located(dict_xpath_product_feed['3'], driver)
+    val = name_input.get_attribute("value")
+    assert val == dict_init_data["yml_name_feed"]
