@@ -1,11 +1,10 @@
-from Base.Base_functions import wait_of_element_located, login_T4, get_app_version
+from Base.Base_functions import wait_of_element_located, login_T4
 from Base.Dictionary_xpath import init_dict_xpath_login
 import allure
 
 # Функция авторизации в системе
-@allure.feature('Тест стенд v.'+get_app_version())
-@allure.story('Базовое тестирование')
-@allure.title('1) Авторизация в системе T4MP.v2')
+@allure.feature('Базовое тестирование')
+@allure.story('1) Авторизация в системе T4MP.v2')
 @allure.severity('blocker')
 def test_login(get_driver, get_init_data):
 # def test_login():

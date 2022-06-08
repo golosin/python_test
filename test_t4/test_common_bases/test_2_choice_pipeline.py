@@ -1,12 +1,11 @@
-from Base.Base_functions import wait_of_element_located, login_T4, choice_pipeline_mp, get_app_version
+from Base.Base_functions import wait_of_element_located, login_T4, choice_pipeline_mp
 from Base.Dictionary_xpath import init_dict_xpath_login, init_dict_xpath_product_feed, init_dict_xpath_base
 import allure
 
 
 # Проверка выбор пайплайна и МП
-@allure.feature('Тест стенд v.'+get_app_version())
-@allure.story('Базовое тестирование')
-@allure.title('2) Открытие пайплайна и выбор МП')
+@allure.feature('Базовое тестирование')
+@allure.story('2) Открытие пайплайна и выбор МП')
 @allure.severity('critical')
 def test_choice_pipeline(get_driver, get_init_data):
     """

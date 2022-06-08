@@ -1,12 +1,11 @@
-from Base.Base_functions import wait_of_element_located, login_T4, choice_pipeline_mp, get_app_version
+from Base.Base_functions import wait_of_element_located, login_T4, choice_pipeline_mp
 from Base.Dictionary_xpath import init_dict_xpath_login, init_dict_xpath_product_feed, init_dict_xpath_base
 import allure
 import  time
 
 # Проверка открытия "Product feed" и 1-ой карточки товаров из списка
-@allure.feature('Тест стенд v.'+get_app_version())
-@allure.story('Базовое тестирование')
-@allure.title('5) Открытие "Published products" и 1-ой карточки товаров из списка')
+@allure.feature('Базовое тестирование')
+@allure.story('5) Открытие "Published products" и 1-ой карточки товаров из списка')
 @allure.severity('blocker')
 def test_base_click_published(get_driver, get_init_data):
     """
