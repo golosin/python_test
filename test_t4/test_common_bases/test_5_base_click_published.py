@@ -4,7 +4,7 @@ import allure
 import  time
 
 # Проверка открытия "Product feed" и 1-ой карточки товаров из списка
-@allure.feature('Базовое тестирование '+get_app_version())
+@allure.feature('Базовое тестирование v.'+get_app_version())
 @allure.story('5) Открытие "Published products" и 1-ой карточки товаров из списка')
 @allure.severity('blocker')
 def test_base_click_published(get_driver, get_init_data):

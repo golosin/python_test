@@ -70,7 +70,7 @@ def get_app_version():
     headers = {"Content-Type": "application/json; charset=utf-8",
                "cookie": "csrftoken=DA9y74VS0SKQyDPhwvkPa54Q6365XZIw2QTI8wfl5a5W21HHSnWtxZHkEDkj5Dm4; sessionid=qkqlrryw6uive8faq3x18uf0mr0p4noi"}
 
-    url = 'https://dev.app.market4.place/graphql'
+    url = 'https://test.app.market4.place/graphql'
 
     response = requests.post(url, headers=headers, json={'query': query})
     response_body = response.json()

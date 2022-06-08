@@ -4,7 +4,7 @@ import allure
 
 
 # Проверка выбор пайплайна и МП
-@allure.feature('Базовое тестирование '+get_app_version())
+@allure.feature('Базовое тестирование v.'+get_app_version())
 @allure.story('2) Открытие пайплайна и выбор МП')
 @allure.severity('critical')
 def test_choice_pipeline(get_driver, get_init_data):
