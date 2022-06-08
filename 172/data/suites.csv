@@ -1,0 +1,48 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jun 08 18:00:47 GMT 2022","Wed Jun 08 18:00:49 GMT 2022","2016","test_t4.test_common_bases","test_2_choice_pipeline","","","","2) Открытие пайплайна и выбор МП","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    "
+"passed","Wed Jun 08 18:00:51 GMT 2022","Wed Jun 08 18:00:56 GMT 2022","4388","test_t4.test_common_bases","test_3_base_click_product_feed","","","","3) Открытие ""Product feed"" и 1-ой карточки товаров из списка","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Product feed""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Product feed""
+    6) Возврат на страницу кубиков
+    "
+"broken","Wed Jun 08 18:01:11 GMT 2022","Wed Jun 08 18:01:34 GMT 2022","22707","test_t4.test_common_bases","test_6_save_delete_yml_feed","","","","6) Создание/удаление YML фида","
+     1) Авторизация в системе T4MP.v2
+     2) Выбор пайплайна и МП
+     3) Открытие ""Feeds list""
+     4) Нажатие кнопки ""Add feed""
+     5) Открытие списка ""File type""
+     6) Выбор типа ""Yandex Feed""
+     7) Заполнение поля ""Name""
+     8) Заполнение поля ""Url""
+     9) Нажатие кнопки ""Save""
+    10) Возврат на ""Feeds list""
+    11) Возврат в ""Edit feed config""
+    12) Проверка сохраненного ""Url products""
+    13) Проверка сохраненного ""Name"" фида
+    "
+"passed","Wed Jun 08 18:00:58 GMT 2022","Wed Jun 08 18:01:02 GMT 2022","4286","test_t4.test_common_bases","test_4_base_click_edit_product","","","","4) Открытие ""Edit products"" и 1-ой карточки товаров из списка","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Edit products""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Edit products""
+    6) Возврат на страницу кубиков
+    "
+"passed","Wed Jun 08 18:01:05 GMT 2022","Wed Jun 08 18:01:09 GMT 2022","4314","test_t4.test_common_bases","test_5_base_click_published","","","","5) Открытие ""Published products"" и 1-ой карточки товаров из списка","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Published products""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Published products""
+    6) Возврат на страницу кубиков
+    "
+"passed","Wed Jun 08 18:00:44 GMT 2022","Wed Jun 08 18:00:45 GMT 2022","935","test_t4.test_common_bases","test_1_login","","","","1) Авторизация в системе","
+    1) Авторизация в системе T4MP.v2
+    2) Переход к листингу пайплайнов
+    "
