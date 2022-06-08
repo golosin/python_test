@@ -3,3 +3,4 @@ selenium
 allure-pytest
 allure-python-commons
 async-generator
+requests
