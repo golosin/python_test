@@ -3,7 +3,7 @@ from Base.Dictionary_xpath import init_dict_xpath_login, init_dict_xpath_product
 import allure
 
 # Проверка открытия "Product feed" и 1-ой карточки товаров из списка
-@allure.feature('Базовое тестирование'+get_app_version())
+@allure.feature('Базовое тестирование '+get_app_version())
 @allure.story('4) Открытие "Edit products" и 1-ой карточки товаров из списка')
 @allure.severity('blocker')
 def test_base_click_edit_product(get_driver, get_init_data):
