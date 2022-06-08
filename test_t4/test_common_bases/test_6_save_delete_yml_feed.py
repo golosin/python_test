@@ -1,11 +1,12 @@
-from Base.Base_functions import wait_of_element_located, find_text_in_element, login_T4, choice_pipeline_mp
+from Base.Base_functions import wait_of_element_located, get_app_version, login_T4, choice_pipeline_mp
 from Base.Dictionary_xpath import init_dict_xpath_login, init_dict_xpath_product_feed, init_dict_xpath_base
 import allure
 import time
 
 # Функция загрузки YML feed
-@allure.feature('Базовое тестирование')
-@allure.story('6) Создание/удаление YML фида')
+@allure.feature('Тест стенд v.'+get_app_version())
+@allure.story('Базовое тестирование')
+@allure.title('6) Создание/удаление YML фида')
 @allure.severity('critical')
 def test_create_delete_yml_feed(get_driver, get_init_data):
     """

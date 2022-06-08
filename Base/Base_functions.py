@@ -53,9 +53,23 @@ def choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed):
     # листинг пайплайнов -> заданный пайплайн
     login_button = wait_of_element_located(dict_xpath_product_feed['0'], driver)
     login_button.click()
-    # time.sleep(2)
 
     # общая стр пайплайна -> Wildberries (клик)
     product_feed = wait_of_element_located(dict_xpath_base['1'], driver)
     product_feed.click()
-    # time.sleep(2)
+
+# Версия билда
+def get_app_version():
+    query = """query{
+            appVersion{
+                appVersion
+            }
+        }
+        """
+    headers = {"Content-Type": "application/json; charset=utf-8",
+               "x-csrftoken": "DA9y74VS0SKQyDPhwvkPa54Q6365XZIw2QTI8wfl5a5W21HHSnWtxZHkEDkj5Dm4"}
+    url = 'https://dev.app.market4.place/graphql'
+
+    response = requests.post(url, headers=headers, json={'query': query})
+    response_body = response.json()
+    return response_body['data']['appVersion']['appVersion']
