@@ -4,8 +4,9 @@ import allure
 import time
 
 # Функция загрузки YML feed
-@allure.feature('Базовое тестирование v.'+get_app_version())
-@allure.story('6) Создание/удаление YML фида')
+@allure.feature('Тест стенд v.'+get_app_version())
+@allure.story('Базовое тестирование')
+@allure.title('6) Создание/удаление YML фида')
 @allure.severity('critical')
 def test_create_delete_yml_feed(get_driver, get_init_data):
     """
