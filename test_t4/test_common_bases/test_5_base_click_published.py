@@ -31,19 +31,23 @@ def test_base_click_published(get_driver, get_init_data):
     choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
 
     # 3) общая страница -> Published on marketplace (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['6'], driver)
+    product_feed = wait_of_element_located('выбор кубика "Published on marketplace"',
+                                           dict_xpath_base['6'], driver)
     product_feed.click()
 
     # 4) Published on marketplace -> 1й товар карточка (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['5'], driver)
+    product_feed = wait_of_element_located('выбор 1ой карточки товара',
+                                           dict_xpath_base['5'], driver)
     product_feed.click()
 
     # 5) 1й товар карточкаа -> Published on marketplace (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
+    product_feed = wait_of_element_located('возврат на "Published on marketplace"',
+                                           dict_xpath_base['3'], driver)
     product_feed.click()
 
     # 6) Published on marketplace -> общая страница (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
+    product_feed = wait_of_element_located('выход из "Published on marketplace" на общую страницу',
+                                           dict_xpath_base['3'], driver)
     product_feed.click()
 
 

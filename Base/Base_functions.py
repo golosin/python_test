@@ -2,10 +2,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import requests
+import allure
 
 
 # Функция ожидания элементов
-def wait_of_element_located(xpath, driver_init):
+@ allure.step('Действие: {description}')
+def wait_of_element_located(description, xpath, driver_init):
     element = WebDriverWait(driver_init, 15).until(
         EC.presence_of_element_located(
             (By.XPATH, xpath)
@@ -38,25 +40,30 @@ def find_text_in_element(xpath, driver_init, text):
 # Функция авторизации в системе
 def login_T4(driver, dict_init_data, dict_xpath_login):
     # T4MP -> "Email" (ввод)
-    email_input = wait_of_element_located(dict_xpath_login['0'], driver)
+    email_input = wait_of_element_located('ввод в поле "Email"',
+                                          dict_xpath_login['0'], driver)
     email_input.send_keys(dict_init_data["email"])
 
     # T4MP -> "Password" (ввод)
-    password_input = wait_of_element_located(dict_xpath_login['1'], driver)
+    password_input = wait_of_element_located('ввод в поле "Password"',
+                                             dict_xpath_login['1'], driver)
     password_input.send_keys(dict_init_data["password"])
 
     # T4MP -> "Sing in" (клик)
-    login_button = wait_of_element_located(dict_xpath_login['2'], driver)
+    login_button = wait_of_element_located('нажатие кнопки "Sing in"',
+                                           dict_xpath_login['2'], driver)
     login_button.click()
 
 # Выбор пайплайна и МП
 def choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed):
     # листинг пайплайнов -> заданный пайплайн
-    login_button = wait_of_element_located(dict_xpath_product_feed['0'], driver)
+    login_button = wait_of_element_located('выбор указанного пайплайна',
+                                           dict_xpath_product_feed['0'], driver)
     login_button.click()
 
     # общая стр пайплайна -> Wildberries (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['1'], driver)
+    product_feed = wait_of_element_located('выбор МП "Wildberries"',
+                                           dict_xpath_base['1'], driver)
     product_feed.click()
 
 # Версия билда

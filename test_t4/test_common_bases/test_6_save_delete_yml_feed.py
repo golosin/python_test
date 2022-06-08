@@ -43,65 +43,80 @@ def test_create_delete_yml_feed(get_driver, get_init_data):
     choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
 
     # 3) общая страница -> Feeds list (клик)
-    prod_feed = wait_of_element_located(dict_xpath_product_feed['1'], driver)
+    prod_feed = wait_of_element_located('test',
+                                        dict_xpath_product_feed['1'], driver)
     prod_feed.click()
 
     # 4) Feeds list -> "Add feed" (клик)
-    add_feed = wait_of_element_located(dict_xpath_product_feed['2'], driver)
+    add_feed = wait_of_element_located('test',
+                                       dict_xpath_product_feed['2'], driver)
     add_feed.click()
 
     # 5) Add feed config -> "File type" (клик)
-    type_file = wait_of_element_located(dict_xpath_product_feed['7.0'], driver)
+    type_file = wait_of_element_located('test',
+                                        dict_xpath_product_feed['7.0'], driver)
     type_file.click()
 
     # 6) Add feed config -> "File type" (Yandex Feed) (клик)
-    type_file_yml = wait_of_element_located(dict_xpath_product_feed['7.2'], driver)
+    type_file_yml = wait_of_element_located('test',
+                                            dict_xpath_product_feed['7.2'], driver)
     type_file_yml.click()
 
     # 7) Add feed config -> "Name" (ввод)
-    name_input = wait_of_element_located(dict_xpath_product_feed['3'], driver)
+    name_input = wait_of_element_located('test',
+                                         dict_xpath_product_feed['3'], driver)
     name_input.send_keys(dict_init_data["yml_name_feed"])
 
     # 8) Add feed config -> "Url products" (ввод)
-    url_input = wait_of_element_located(dict_xpath_product_feed['4'], driver)
+    url_input = wait_of_element_located('test',
+                                        dict_xpath_product_feed['4'], driver)
     url_input.send_keys(dict_init_data["yml_url_location"])
 
     # 9) Add feed config -> "Url prices" (ввод)
-    url_input = wait_of_element_located(dict_xpath_product_feed['5'], driver)
+    url_input = wait_of_element_located('test',
+                                        dict_xpath_product_feed['5'], driver)
     url_input.send_keys(dict_init_data["yml_url_location"])
 
     # 10) Add feed config -> "Url stocks" (ввод)
-    url_input = wait_of_element_located(dict_xpath_product_feed['6'], driver)
+    url_input = wait_of_element_located('test',
+                                        dict_xpath_product_feed['6'], driver)
     url_input.send_keys(dict_init_data["yml_url_location"])
 
     # 11) Add feed config -> "Save" (клик)
-    button_save_feed = wait_of_element_located(dict_xpath_product_feed['8'], driver)
+    button_save_feed = wait_of_element_located('test',
+                                               dict_xpath_product_feed['8'], driver)
     button_save_feed.click()
 
     # 12) Add feed config -> Feeds list (клик)
-    arrow_left = wait_of_element_located(dict_xpath_product_feed['10'], driver)
+    arrow_left = wait_of_element_located('test',
+                                         dict_xpath_product_feed['10'], driver)
     arrow_left.click()
 
     # 13) Feeds list -> Edit feed config (клик)
-    table_edit = wait_of_element_located(dict_xpath_product_feed['12'], driver)
+    table_edit = wait_of_element_located('test',
+                                         dict_xpath_product_feed['12'], driver)
     table_edit.click()
 
     # 14) Проверка сохраненного "Url products"
-    url_input = wait_of_element_located(dict_xpath_product_feed['4'], driver)
+    url_input = wait_of_element_located('test',
+                                        dict_xpath_product_feed['4'], driver)
     val = url_input.get_attribute("value")
     assert val == dict_init_data["yml_url_location"]
 
     # 15) Проверка сохраненного "Url prices"
-    url_input = wait_of_element_located(dict_xpath_product_feed['5'], driver)
+    url_input = wait_of_element_located('test',
+                                        dict_xpath_product_feed['5'], driver)
     val = url_input.get_attribute("value")
     assert val == dict_init_data["yml_url_location"]
 
     # 16) Проверка сохраненного "Url stocks"
-    url_input = wait_of_element_located(dict_xpath_product_feed['6'], driver)
+    url_input = wait_of_element_located('test',
+                                        dict_xpath_product_feed['6'], driver)
     val = url_input.get_attribute("value")
     assert val == dict_init_data["yml_url_location"]
 
     # 17) Проверка сохраненного "Name" фида
-    name_input = wait_of_element_located(dict_xpath_product_feed['3'], driver)
+    name_input = wait_of_element_located('test',
+                                         dict_xpath_product_feed['3'], driver)
     val = name_input.get_attribute("value")
     assert val == dict_init_data["yml_name_feed"]

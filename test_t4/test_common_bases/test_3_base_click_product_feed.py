@@ -30,17 +30,21 @@ def test_base_click_product_feed(get_driver, get_init_data):
     choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
 
     # 3) общая страница -> Feed Products (клик)
-    product_feed = wait_of_element_located(dict_xpath_product_feed['15'], driver)
+    product_feed = wait_of_element_located('выбор кубика "Feed Products"',
+                                           dict_xpath_product_feed['15'], driver)
     product_feed.click()
 
     # 4) Feed Products -> 1й товар карточка (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['2'], driver)
+    product_feed = wait_of_element_located('выбор 1ой карточки товара',
+                                           dict_xpath_base['2'], driver)
     product_feed.click()
 
     # 5) 1й товар карточкаа -> Feed Products (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
+    product_feed = wait_of_element_located('возврат на "Feed Products"',
+                                           dict_xpath_base['3'], driver)
     product_feed.click()
 
     # 6) Feed Products -> общая страница (клик)
-    product_feed = wait_of_element_located(dict_xpath_base['3'], driver)
+    product_feed = wait_of_element_located('выход из "Feed Products" на общую страницу',
+                                           dict_xpath_base['3'], driver)
     product_feed.click()

@@ -27,4 +27,5 @@ def test_choice_pipeline(get_driver, get_init_data):
     choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
 
     # общая страница -> Feed Products (ожидание появления эллемента)
-    product_feed = wait_of_element_located(dict_xpath_product_feed['15'], driver)
+    product_feed = wait_of_element_located('ожидание кубика "Feed Products"',
+                                           dict_xpath_product_feed['15'], driver)
