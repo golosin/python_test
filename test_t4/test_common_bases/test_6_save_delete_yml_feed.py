@@ -17,11 +17,11 @@ def test_create_delete_yml_feed(get_driver, get_init_data):
      5) Открытие списка "File type"
      6) Выбор типа "Yandex Feed"
      7) Заполнение поля "Name"
-     8) Заполнение поля "Url"
+     8) Заполнение поля "Url" для "Product source"
      9) Нажатие кнопки "Save"
     10) Возврат на "Feeds list"
     11) Возврат в "Edit feed config"
-    12) Проверка сохраненного "Url products"
+    12) Проверка сохраненного "Url" для "Product source"
     13) Проверка сохраненного "Name" фида
     """
 
@@ -64,7 +64,7 @@ def test_create_delete_yml_feed(get_driver, get_init_data):
     name_input.send_keys(dict_init_data["yml_name_feed"])
 
     # 8) Add feed config -> "Url" (ввод)
-    url_input = wait_of_element_located('ввод в поле "Url"',
+    url_input = wait_of_element_located('ввод в поле "Url" для "Product source"',
                                         dict_xpath_product_feed['4'], driver)
     url_input.send_keys(dict_init_data["yml_url_location"])
 
@@ -84,7 +84,7 @@ def test_create_delete_yml_feed(get_driver, get_init_data):
     table_edit.click()
 
     # 12) Проверка сохраненного "Url"
-    url_input = wait_of_element_located('проверка сохраненного "Url"',
+    url_input = wait_of_element_located('проверка сохраненного "Url" для "Product source"',
                                         dict_xpath_product_feed['4'], driver)
     val = url_input.get_attribute("value")
     assert val == dict_init_data["yml_url_location"]
