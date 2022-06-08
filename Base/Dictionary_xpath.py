@@ -23,12 +23,12 @@ def init_dict_xpath_product_feed(dict_init_data):
         '2': "//button[@data-test-id='add-feed']",
         # Add feed config -> "Name"
         '3': "//input[@id='name']",
-        # Add feed config -> "Url products"
-        '4': "//input[@id='urlProducts']",
-        # Add feed config -> "Url prices"
-        '5': "//input[@id='urlPrices']",
-        # Add feed config -> "Url stocks"
-        '6': "//input[@id='urlStocks']",
+        # Add feed config -> "Url"
+        '4': "//input[@id='url']",
+        #
+        '5': "",
+        #
+        '6': "",
         # Add feed config -> "File type"
         '7.0': "//div[@class='ant-select-selector']",
         # Add feed config -> "File type" (CSV)
