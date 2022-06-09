@@ -5,35 +5,35 @@ name: Python application
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "15 6 * * *"
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-#  sending-email:
-#    runs-on: ubuntu-latest
-#    needs: [ build ]
-#    if: failure()
-#    steps:
-#      - run: |
-#          echo "<h1> Тесты прошли с ошибкой!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2></div>" > temp.html
-#      - name: Send email, test report
-#        uses: dawidd6/action-send-mail@v3
-#        with:
-#          server_address: smtp.gmail.com
-#          server_port: 465
-#          username: ${{ secrets.GMAIL_LOGIN }}
-#          password: ${{ secrets.GMAIL_PASS }}
-#          subject: Report Email
-##          body: https://golosin.github.io/python_test/
-#          html_body: file://temp.html
-#          to: aaaagd6rbdesiqh4kt3d5ovsgm@mp30.slack.com
-#          from: ${{ secrets.GMAIL_LOGIN }}
-#          secure: true
-#          ignore_cert: true
-#          convert_markdown: true
+  sending-email:
+    runs-on: ubuntu-latest
+    needs: [ build ]
+    if: failure()
+    steps:
+      - run: |
+          echo "<h1> Тесты прошли с ошибкой!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2></div>" > temp.html
+      - name: Send email, test report
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.GMAIL_LOGIN }}
+          password: ${{ secrets.GMAIL_PASS }}
+          subject: Report Email
+#          body: https://golosin.github.io/python_test/
+          html_body: file://temp.html
+          to: ${{ secrets.SEND_TO_MAIL }}
+          from: ${{ secrets.GMAIL_LOGIN }}
+          secure: true
+          ignore_cert: true
+          convert_markdown: true
 
   build:
     runs-on: ubuntu-latest
