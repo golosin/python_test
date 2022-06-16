@@ -20,21 +20,20 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
      5) Открытие списка "File type"
      6) Выбор типа "Yandex Feed"
      7) Заполнение поля "Url" для "Product source"
-     8) Выключение "Price stock same config"
-     9) Нажатие кнопки "Save"
-    10) Ожидание когда пропадет элемент "Feed config save"
-    11) Нажатие кнопки "Load products"
-    12) Ожидание когда пропадет элемент "Feed product import started"
-    13) Закрытие "Add feed config"
-    14) Открытие "Product feed"
-    15) Ввод в поле "Search" названия добавленного продукта
-    16) Поиск в "Feed products" добавленного товара по дате добавления
-    17) Проверка значения "id" в таблице и в YML feed
-    18) Проверка значения "Product" в таблице и "name" в YML feed
-    19) Проверка значения "Sale" в таблице и "oldprice" в YML feed
-    20) Проверка значения "Vendor" в таблице и в YML feed
-    21) Проверка значения "Stock" в таблице и в YML feed
-    22) Открытие карточки импортированного товара
+     8) Нажатие кнопки "Save"
+     9) Ожидание когда пропадет элемент "Feed config save"
+    10) Нажатие кнопки "Load products"
+    11) Ожидание когда пропадет элемент "Feed product import started"
+    12) Закрытие "Add feed config"
+    13) Открытие "Product feed"
+    14) Ввод в поле "Search" названия добавленного продукта
+    15) Поиск в "Feed products" добавленного товара по дате добавления
+    16) Проверка значения "id" в таблице и в YML feed
+    17) Проверка значения "Product" в таблице и "name" в YML feed
+    18) Проверка значения "Sale" в таблице и "oldprice" в YML feed
+    19) Проверка значения "Vendor" в таблице и в YML feed
+    20) Проверка значения "Stock" в таблице и в YML feed
+    21) Открытие карточки импортированного товара
     """
 
 
@@ -71,46 +70,46 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     url_input = wait_of_element_located('ввод в поле "Url" для "Product source"', dict_xpath_product_feed['4'], driver)
     url_input.send_keys(dict_init_data["yml_url_location"])
 
-    # 8) "Price stock same config" -> off
-    price_stock_config = wait_of_element_located('выключение "Price stock same config"',
-                                                 dict_xpath_product_feed['3'], driver)
-    price_stock_config.click()
+    # # 8) "Price stock same config" -> off
+    # price_stock_config = wait_of_element_located('выключение "Price stock same config"',
+    #                                              dict_xpath_product_feed['3'], driver)
+    # price_stock_config.click()
 
-    # 9) Add feed config -> "Save" (клик)
+    # 8) Add feed config -> "Save" (клик)
     button_save_feed = wait_of_element_located('нажатие кнопки "Save"', dict_xpath_product_feed['8'], driver)
     button_save_feed.click()
     time.sleep(2)
 
-    # 10) ожидание когда пропадет эллемент "Feed config save"
+    # 9) ожидание когда пропадет эллемент "Feed config save"
     wait_notice_save = wait_of_invisibility_of_element_located('ожидание "Feed config save"',
                                                                dict_xpath_product_feed['6'], driver)
 
-    # 11) Add feed config -> "Load products"
+    # 10) Add feed config -> "Load products"
     button_load = wait_of_element_located('нажатие кнопки "Load products"', dict_xpath_product_feed['5'], driver)
     button_load.click()
     str_data_load = datetime.now().strftime("%d.%m.%Y %H:%M")
     data_load = datetime.strptime(str_data_load, "%d.%m.%Y %H:%M")
     time.sleep(3)
 
-    # 12) ожидание когда пропадет эллемент "Feed product import started"
+    # 11) ожидание когда пропадет эллемент "Feed product import started"
     wait_import_started = wait_of_invisibility_of_element_located('ожидание "Feed product import started"',
                                                                   dict_xpath_product_feed['16'], driver)
 
-    # 13) Add feed config -> "Close"
+    # 12) Add feed config -> "Close"
     close_config = wait_of_element_located('выход из "Add feed config"', dict_xpath_product_feed['14'], driver)
     close_config.click()
 
-    # 14) общая страница -> Feed Products (клик)
+    # 13) общая страница -> Feed Products (клик)
     product_feed = wait_of_element_located('выбор кубика "Feed Products"', dict_xpath_product_feed['15'], driver)
     product_feed.click()
 
-    # 15) Feed products -> "Search"
+    # 14) Feed products -> "Search"
     search = wait_of_element_located('ввод названия продукта в поле "Search by name or ID"',
                                      dict_xpath_product_feed['17'], driver)
     search.send_keys(feed_data[0][3])
     search.send_keys(u'\ue007')
 
-    # 16) Поиск в Feed products добавленного товара по дате добавления
+    # 15) Поиск в Feed products добавленного товара по дате добавления
     str_data_end = ""
     t_delta = datetime.strptime("01.01.0001 01:01", "%d.%m.%Y %H:%M")
     find_data = datetime.strptime("01.01.0001 01:01", "%d.%m.%Y %H:%M")
@@ -145,7 +144,7 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     str_only_data = str_only_data[:10]
     str_only_time = str_only_time[11:]
 
-    # 17) Проверка значения "id" в таблице и в YML feed
+    # 16) Проверка значения "id" в таблице и в YML feed
     xpath_id = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data + \
                "']/following-sibling::div/span[text()='" + str_only_time + "']/../../../../../td[2]"
     id_check = wait_of_element_located('ожидание эллемента "id" в таблице "Feed products" для импортированного товара',
@@ -153,14 +152,14 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     str_id_check = id_check.text[:id_check.text.find('\n')]
     assert str_id_check == feed_data[0][0], '"id" в таблице "Feed products" д.б. равен "id" в YML feed'
 
-    # 18) Проверка значения "Product" в таблице и "name" в YML feed
+    # 17) Проверка значения "Product" в таблице и "name" в YML feed
     xpath_name = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data +\
                  "']/following-sibling::div/span[text()='" + str_only_time + "']/../../../../../td[3]"
     name_check = wait_of_element_located('ожидание эллемента "Product" в таблице "Feed products" для импортированного товара',
                                          xpath_name, driver)
     assert name_check.text == feed_data[0][3], '"Product" в таблице "Feed products" д.б. равен "name" в YML feed'
 
-    # 19) Проверка значения "Sale" в таблице и "price" в YML feed
+    # 18) Проверка значения "Sale" в таблице и "price" в YML feed
     xpath_sale = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data +\
                  "']/following-sibling::div/span[text()='" + str_only_time + "']/../../../../../td[4]"
     sale_check = wait_of_element_located('ожидание эллемента "Sale" в таблице "Feed products" для импортированного товара',
@@ -168,21 +167,21 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     str_sale_check = sale_check.text[:sale_check.text.find(' ')]
     assert str_sale_check == feed_data[0][2], '"Sale" в таблице "Feed products" д.б. равен "oldprice" в YML feed'
 
-    # 20) Проверка значения "Vendor" в таблице и в YML feed
+    # 19) Проверка значения "Vendor" в таблице и в YML feed
     xpath_vendor = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data +\
                    "']/following-sibling::div/span[text()='" + str_only_time + "']/../../../../../td[7]"
     vendor_check = wait_of_element_located('ожидание эллемента "Vendor" в таблице "Feed products" для импортированного товара',
                                            xpath_vendor, driver)
     assert vendor_check.text == feed_data[0][4], '"Vendor" в таблице "Feed products" д.б. равен "vendor" в YML feed'
 
-    # 21) Проверка значения "Stock" в таблице и в YML feed
+    # 20) Проверка значения "Stock" в таблице и в YML feed
     xpath_stock = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data +\
                    "']/following-sibling::div/span[text()='" + str_only_time + "']/../../../../../td[5]"
     stock_check = wait_of_element_located('ожидание эллемента "Stock" в таблице "Feed products" для импортированного товара',
                                            xpath_stock, driver)
     assert stock_check.text == feed_data[0][5], '"Stock" в таблице "Feed products" д.б. равен "count" в YML feed'
 
-    # 22) Открытие карточки импортированного товара
+    # 21) Открытие карточки импортированного товара
     xpath_name = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data + \
                  "']/following-sibling::div/span[text()='" + str_only_time + \
                  "']/../../../../../td[3]/div/div/div[2]/div/div/a"
