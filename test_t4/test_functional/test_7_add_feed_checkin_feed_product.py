@@ -127,9 +127,6 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
             data_row = datetime.strptime(str_data_row.replace('\n', ' '), "%d.%m.%Y %H:%M")
             t_delta = data_row - data_load
             int_t_delta = abs(t_delta.total_seconds())
-            print(int_t_delta)
-            print(data_row)
-            print()
             if int_t_delta <= 120:
                 find_data = data_row
                 break
