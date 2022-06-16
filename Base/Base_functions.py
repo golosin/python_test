@@ -1,13 +1,25 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.remote.webelement import WebElement
 import requests
 import allure
+from typing import List
 
 
 # Функция ожидания элементов
 @ allure.step('Действие: {description}')
-def wait_of_element_located(description, xpath, driver_init):
+def wait_of_elements_located(description, xpath, driver_init) -> List[WebElement]:
+    elements = WebDriverWait(driver_init, 15).until(
+        EC.presence_of_all_elements_located(
+            (By.XPATH, xpath)
+        )
+    )
+    return elements
+
+# Функция ожидания элемента
+@ allure.step('Действие: {description}')
+def wait_of_element_located(description, xpath, driver_init) -> WebElement:
     element = WebDriverWait(driver_init, 15).until(
         EC.presence_of_element_located(
             (By.XPATH, xpath)
@@ -17,7 +29,8 @@ def wait_of_element_located(description, xpath, driver_init):
 
 
 # Ожидаемое условие для проверки того, что элемент либо невидим, либо отсутствует в DOM веб-страницы
-def wait_of_invisibility_of_element_located(xpath, driver_init):
+@ allure.step('Действие: {description}')
+def wait_of_invisibility_of_element_located(description, xpath, driver_init) -> WebElement:
     element = WebDriverWait(driver_init, 15).until(
         EC.invisibility_of_element_located(
             (By.XPATH, xpath)
@@ -27,7 +40,7 @@ def wait_of_invisibility_of_element_located(xpath, driver_init):
 
 
 # Поиск текста в элементе
-def find_text_in_element(xpath, driver_init, text):
+def find_text_in_element(xpath, driver_init, text) -> WebElement:
     element = WebDriverWait(driver_init, 15).until(
         EC.text_to_be_present_in_element(
             (By.XPATH, xpath),
@@ -76,9 +89,7 @@ def get_app_version():
         """
     headers = {"Content-Type": "application/json; charset=utf-8",
                "cookie": "csrftoken=DA9y74VS0SKQyDPhwvkPa54Q6365XZIw2QTI8wfl5a5W21HHSnWtxZHkEDkj5Dm4; sessionid=qkqlrryw6uive8faq3x18uf0mr0p4noi"}
-
     url = 'https://test.app.market4.place/graphql'
-
     response = requests.post(url, headers=headers, json={'query': query})
     response_body = response.json()
     return response_body['data']['appVersion']['appVersion']

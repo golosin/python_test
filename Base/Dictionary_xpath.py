@@ -21,14 +21,14 @@ def init_dict_xpath_product_feed(dict_init_data):
         '1': "//span[@aria-label='setting']",
         # Feeds list -> "Add feed"
         '2': "//button[@data-test-id='add-feed']",
-        # Add feed config -> "Name"
-        '3': "//input[@id='name']",
+        # Price stock same config -> off
+        '3': "//button[@role='switch']",
         # Add feed config -> "Url"
         '4': "//input[@id='url']",
-        #
-        '5': "",
-        #
-        '6': "",
+        # Add feed config -> "Load products"
+        '5': "//button[@data-test-id='load-products']",
+        # эллемент "Feed config save"
+        '6': "//div[@class='ant-message-notice-content']",
         # Add feed config -> "File type"
         '7.0': "//div[@class='ant-select-selector']",
         # Add feed config -> "File type" (CSV)
@@ -55,8 +55,10 @@ def init_dict_xpath_product_feed(dict_init_data):
         '14': "//span[@aria-label='close']",
         # общая страница -> Feed Products
         '15': "//span[@aria-label='file-add']",
-
-        '16': "//tr[@data-row-key='110']"
+        # эллемент "Feed product import started"
+        '16': "//div[@class='t4mp-toast-content']",
+        # Feed product -> "Search"
+        '17': "//input[@placeholder='Search by name or ID']"
     }
     return dict_xpath_feed_products
 

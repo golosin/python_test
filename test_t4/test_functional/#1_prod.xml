@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog
+SYSTEM "shops.dtd">
+<yml_catalog date="2022-04-11 07:33">
+	<shop>
+		<name>SmartMarket</name>
+		<company>SmartMarket</company>
+		<url>https://example.com</url>
+		<currencies>
+			<currency id="RUR" rate="1"/>
+			<currency id="USD" rate="83.746495"/>
+		</currencies>
+		<categories>
+		</categories>
+		<offers>
+			<offer id="110" available="true">
+				<price>1000</price>
+				<oldprice>1100</oldprice>
+				<count>1</count>
+				<currencyId>RUR</currencyId>
+				<categoryId>3247</categoryId>
+				<picture>https://smarket.hk/img/1e4e1a268cd9c896b25558d23c573276/939cf835000c00df673912d2afc9150c7dda2899.jpg</picture>
+				<picture>https://smarket.hk/img/656f1d9518395ec39bdd0cb38a875b4c/8be3a69396daa79b853c46eb57a1c3c7b860298b.jpg</picture>
+				<weight>0.182</weight>
+				<dimensions>6.5/6.5/21.5</dimensions>
+				<name>VIOMI нержавеющей стали вакуумный портативный 300 мл термоса от Сяоми youpin</name>
+				<vendor>VIOMI</vendor>
+				<description><![CDATA[Описание:<br>Бак из нержавеющей стали и силиконовая пробка пищевого качества, безопасные материалы гарантируют ваше здоровье. Супер-изоляция делает его пригодным для всех сезонов, теплоизоляция для зимы, холодная изоляция для лета. Хорошая дорожная кружка и подарок для людей всех возрастов. <br><br>Можные характеристики:<br>● Вместимость: 300 мл<br>● Супер-изоляция, тепло-холодная изоляция в течение 12 часов<br>● Напечатанный корпус, не выцветает, не легко поцарапать <br>● Идеальный размер сохраняет влагу на открытом воздухе и легко помещается в сумке во время пеших походов, кемпинга <br>● Герметичная, не волнуйтесь о влажности сумки.
+
+    
+            Бренд: VIOMI <br /> Материал: Силикон, нержавеющая сталь
+    
+      
+            0,270 Вес упаковки: 0,319 кг <br /> Размер продукта (Д х Ш х В): 5,80 х 5,80 х 20,60 см / 2,28 х 2,28 х 8,11 дюйма <br /> Размер упаковки (Д х Ш х В): 6,50 х 6,50 х 21,50 см / 2,56 х 2,56 х 8,46 дюймов
+    
+      
+            Содержание пакета: 1 x Вакуумная чаша]]></description>
+				<param name="Цвет">черный</param>
+				<param name="Бренд">VIOMI</param>
+				<param name="Материал">Силикон, нержавеющая сталь</param>
+				<param name="Размер продукта (Д х Ш х В)">5,80 x 5,80 x 20,60 см / 2,28 x 2,28 x 8,11 дюйма</param>
+				<param name="Размер упаковки (Д х Ш х В)">6,50 x 6,50 x 21,50 см / 2,56 x 2,56 x 8,46 дюйма</param>
+				<param name="Комплектация">1 x Вакуумная чаша</param>
+			</offer>
+		</offers>
+	</shop>
+</yml_catalog>
