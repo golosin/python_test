@@ -98,6 +98,7 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     # 12) Add feed config -> "Close"
     close_config = wait_of_element_located('выход из "Add feed config"', dict_xpath_product_feed['14'], driver)
     close_config.click()
+    time.sleep(20)
 
     # 13) общая страница -> Feed Products (клик)
     product_feed = wait_of_element_located('выбор кубика "Feed Products"', dict_xpath_product_feed['15'], driver)
