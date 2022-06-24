@@ -15,7 +15,7 @@ jobs:
   sending-email:
     runs-on: ubuntu-latest
     needs: [ build ]
-#    if: failure()
+    if: always()
     steps:
       - if: failure()
         run: |

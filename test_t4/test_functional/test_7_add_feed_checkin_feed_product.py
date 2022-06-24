@@ -163,7 +163,7 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     sale_check = wait_of_element_located('ожидание эллемента "Sale" в таблице "Feed products" для импортированного товара',
                                          xpath_sale, driver)
     str_sale_check = sale_check.text[:sale_check.text.find(' ')]
-    assert str_sale_check == feed_data[0][2], '"Sale" в таблице "Feed products" д.б. равен "oldprice" в YML feed'
+    assert str_sale_check == feed_data[0][1], '"Sale" в таблице "Feed products" д.б. равен "price" в YML feed'
 
     # 19) Проверка значения "Vendor" в таблице и в YML feed
     xpath_vendor = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data +\
