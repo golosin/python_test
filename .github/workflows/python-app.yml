@@ -20,7 +20,7 @@ jobs:
       - if: failure()
         run: |
           echo "<h1> Тесты прошли с ошибкой!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2></div>" > temp.html
-      - if: not failure()
+      - if: false == failure()
         run: |
           echo "<h1> Тесты прошли успешно!  </h1>" > temp.html
       - name: Send email, test report
