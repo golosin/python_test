@@ -1,0 +1,56 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Jul 14 06:40:02 GMT 2022","Thu Jul 14 06:40:03 GMT 2022","1006","test_t4.test_common_bases","test_1_login","","","","1) Авторизация в системе","
+    1) Авторизация в системе T4MP.v2
+    2) Переход к листингу пайплайнов
+    "
+"passed","Thu Jul 14 06:40:25 GMT 2022","Thu Jul 14 06:40:30 GMT 2022","4711","test_t4.test_common_bases","test_5_base_click_published","","","","5) Открытие ""Published products"" и 1-ой карточки товаров из списка","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Published products""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Published products""
+    6) Возврат на страницу кубиков
+    "
+"passed","Thu Jul 14 06:40:11 GMT 2022","Thu Jul 14 06:40:15 GMT 2022","4609","test_t4.test_common_bases","test_3_base_click_product_feed","","","","3) Открытие ""Product feed"" и 1-ой карточки товаров из списка","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Product feed""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Product feed""
+    6) Возврат на страницу кубиков
+    "
+"broken","Thu Jul 14 06:40:33 GMT 2022","Thu Jul 14 06:40:59 GMT 2022","25638","test_t4.test_functional","test_7_add_feed_checkin_feed_product","","","","7) Импорт YML фида (без вариантов)","
+     1) Авторизация в системе T4MP.v2
+     2) Выбор пайплайна и МП
+     3) Открытие ""Feeds list""
+     4) Нажатие кнопки ""Add feed""
+     5) Открытие списка ""File type""
+     6) Выбор типа ""Yandex Feed""
+     7) Заполнение поля ""Url"" для ""Product source""
+     8) Нажатие кнопки ""Save""
+     9) Ожидание когда пропадет элемент ""Feed config save""
+    10) Нажатие кнопки ""Load products""
+    11) Ожидание когда пропадет элемент ""Feed product import started""
+    12) Закрытие ""Add feed config""
+    13) Открытие ""Product feed""
+    14) Ввод в поле ""Search"" названия добавленного продукта
+    15) Поиск в ""Feed products"" добавленного товара по дате добавления
+    16) Проверка значения ""id"" в таблице и в YML feed
+    17) Проверка значения ""Product"" в таблице и ""name"" в YML feed
+    18) Проверка значения ""Sale"" в таблице и ""oldprice"" в YML feed
+    19) Проверка значения ""Vendor"" в таблице и в YML feed
+    20) Проверка значения ""Stock"" в таблице и в YML feed
+    21) Открытие карточки импортированного товара
+    "
+"passed","Thu Jul 14 06:40:18 GMT 2022","Thu Jul 14 06:40:23 GMT 2022","4478","test_t4.test_common_bases","test_4_base_click_edit_product","","","","4) Открытие ""Edit products"" и 1-ой карточки товаров из списка","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    3) Открытие ""Edit products""
+    4) Открытие 1-ой карточки товаров из списка
+    5) Возврат на страницу ""Edit products""
+    6) Возврат на страницу кубиков
+    "
+"passed","Thu Jul 14 06:40:06 GMT 2022","Thu Jul 14 06:40:08 GMT 2022","2132","test_t4.test_common_bases","test_2_choice_pipeline","","","","2) Открытие пайплайна и выбор МП","
+    1) Авторизация в системе T4MP.v2
+    2) Выбор пайплайна и МП
+    "
