@@ -232,6 +232,7 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
                                         dict_xpath_product_feed['20'], driver)
     yes_feed.click()
 
+
     # # 18) Открытие карточки импортированного товара
     # xpath_name = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data + \
     #              "']/following-sibling::div/span[text()='" + str_only_time + \
