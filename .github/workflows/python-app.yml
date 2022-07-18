@@ -17,12 +17,8 @@ jobs:
     needs: [ build ]
     if: always()
     steps:
-      - if: failure()
-        run: |
-          echo "<h1> Тесты прошли с ОШИБКОЙ!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2></div>" > temp.html
-      - if: success()
-        run: |
-          echo "<h1> Тесты прошли УСПЕШНО!  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">Ссылка на отчет</a></h2></div>" > temp.html
+      - run: |
+          echo "<h1> Выполнились автотесты  </h1> <div> <h2><a href="https://golosin.github.io/python_test/">ссылка на отчет</a></h2></div>" > temp.html
       - name: Send email, test report
         uses: dawidd6/action-send-mail@v3
         with:

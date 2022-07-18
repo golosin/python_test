@@ -17,6 +17,7 @@ def wait_of_elements_located(description, xpath, driver_init) -> List[WebElement
     )
     return elements
 
+
 # Функция ожидания элемента
 @ allure.step('Действие: {description}')
 def wait_of_element_located(description, xpath, driver_init) -> WebElement:
@@ -40,8 +41,9 @@ def wait_of_invisibility_of_element_located(description, xpath, driver_init) -> 
 
 
 # Поиск текста в элементе
-def find_text_in_element(xpath, driver_init, text) -> WebElement:
-    element = WebDriverWait(driver_init, 15).until(
+@ allure.step('Действие: {description}')
+def find_text_in_element(description, xpath, driver_init, text) -> WebElement:
+    element = WebDriverWait(driver_init, 180).until(
         EC.text_to_be_present_in_element(
             (By.XPATH, xpath),
             text
@@ -67,6 +69,7 @@ def login_T4(driver, dict_init_data, dict_xpath_login):
                                            dict_xpath_login['2'], driver)
     login_button.click()
 
+
 # Выбор пайплайна и МП
 def choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed):
     # листинг пайплайнов -> заданный пайплайн
@@ -78,6 +81,7 @@ def choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed):
     product_feed = wait_of_element_located('выбор МП "Wildberries"',
                                            dict_xpath_base['1'], driver)
     product_feed.click()
+
 
 # Версия билда
 def get_app_version():
@@ -93,3 +97,62 @@ def get_app_version():
     response = requests.post(url, headers=headers, json={'query': query})
     response_body = response.json()
     return response_body['data']['appVersion']['appVersion']
+
+
+# Получение стоков, прайсов и дисконта у WB
+def get_WB_stock_price_discount(imtID):
+
+    url = 'https://suppliers-api.wildberries.ru/'
+    headers = {
+        'accept': 'application/json',
+        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6IjljMjk3YjlmLTcxNTctNGFlZC05NmI0LTVjNDU1MWRjMjk3MiJ9.W6Rkfr3RHx6e1cuJFbHp2hwYHxl6w448of_Mxnai73A',
+        'Content-Type': 'application/json',
+    }
+
+    # Получение баркода
+    uri = 'card/cardByImtID'
+    body = {
+        "jsonrpc": "2.0",
+        "params": {
+            "imtID": imtID,
+            "supplierID": "74c22891-16b9-47c7-8e22-6ba834aa5947"
+        }
+    }
+    response = requests.post(url + uri, headers=headers, json=body)
+    response_body = response.json()
+    barcode = response_body['result']['card']['nomenclatures'][0]['variations'][0]['barcodes'][0]  # Баркод
+    nomenclature = response_body['result']['card']['nomenclatures'][0]['nmId']  # Номенклатура
+    name_prod = response_body['result']['card']['addin'][1]['params'][0]['value']
+    print("Баркод - " + barcode)
+    print("Номенклатура - " + str(nomenclature))
+    print(name_prod)
+
+    # Получение стоков по баркоду
+    uri = 'api/v2/stocks'
+    params = {
+        'search': response_body["result"]["card"]["nomenclatures"][0]["variations"][0]["barcodes"][0],
+        'skip': '0',
+        'take': '100'
+    }
+    response = requests.get(url + uri, headers=headers, params=params)
+    response_body = response.json()
+    stock = response_body['stocks'][0]['stock']  # Стоки
+    warehouse_name = response_body['stocks'][0]['warehouseName']  # Склад
+    print("Стоки - " + str(stock))
+    print("Склад - " + warehouse_name)
+
+    # Получение цен и скидок для все товаров
+    uri = '/public/api/v1/info'
+    params = {
+        "quantity": "0",  # 2 - товар с нулевым остатком, 1 - товар с ненулевым остатком, 0 - товар с любым остатком
+    }
+    response = requests.get(url + uri, headers=headers, params=params)
+    response_body = response.json()
+    for product in response_body:
+        if product['nmId'] == nomenclature:
+            price = product['price']  # Прайс
+            discount = product['discount']  # Скидка
+            print("Прайс - " + str(price))
+            print("Скидка - " + str(discount))
+
+    return [price, stock]

@@ -25,6 +25,8 @@ def init_dict_xpath_product_feed(dict_init_data):
         '3': "//button[@role='switch']",
         # Add feed config -> "Url"
         '4': "//input[@id='url']",
+        # WB config -> "Url"
+        '4.1': "//input[@id='_url']",
         # Add feed config -> "Load products"
         '5': "//button[@data-test-id='load-products']",
         # эллемент "Feed config save"
@@ -58,7 +60,13 @@ def init_dict_xpath_product_feed(dict_init_data):
         # эллемент "Feed product import started"
         '16': "//div[@class='t4mp-toast-content']",
         # Feed product -> "Search"
-        '17': "//input[@placeholder='Search by name or ID']"
+        '17': "//input[@placeholder='Search by name or ID']",
+        # Feeds list -> "WB feed"
+        '18': "//tr[@class='ant-table-row ant-table-row-level-0']/td/div/div/div/div/div/a",
+        # 1-ая строка таблицы загруженных в DOM "Feeds list"
+        '19': "//tbody[@class='ant-table-tbody']/tr[contains(@class, 'ant-table-row')]/td/div/div/div/div[1]/div",
+        # удаление фида - "YES"
+        '20': "//div[@class='ant-modal-body']/div/div[2]/button[2]"
     }
     return dict_xpath_feed_products
 
