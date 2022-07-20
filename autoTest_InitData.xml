@@ -3,7 +3,7 @@
 	<environment>https://test.app.market4.place/</environment>
 	<login>testadmin@t4mp.com</login>
 	<password>9hm2wAg8rDzP2kn</password>
-	<pipeline>test_import_feed</pipeline>
+	<pipeline>test_5_import_WB_export</pipeline>
 	<testFeed>
 		<yml_feed name_feed="YML_feed_auto_test">
 			<desktop_location>/test_data_YML/YMLtest.xml</desktop_location>
