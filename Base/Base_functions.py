@@ -43,7 +43,7 @@ def wait_of_invisibility_of_element_located(description, xpath, driver_init) -> 
 # Поиск текста в элементе
 @ allure.step('Действие: {description}')
 def find_text_in_element(description, xpath, driver_init, text) -> WebElement:
-    element = WebDriverWait(driver_init, 180).until(
+    element = WebDriverWait(driver_init, 300).until(
         EC.text_to_be_present_in_element(
             (By.XPATH, xpath),
             text
@@ -102,10 +102,14 @@ def get_app_version():
 # Получение стоков, прайсов и дисконта у WB
 def get_WB_stock_price_discount(imtID):
 
+    # Медиа 2.0
+    token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6IjljMjk3YjlmLTcxNTctNGFlZC05NmI0LTVjNDU1MWRjMjk3MiJ9.W6Rkfr3RHx6e1cuJFbHp2hwYHxl6w448of_Mxnai73A'
+    supplierID = "74c22891-16b9-47c7-8e22-6ba834aa5947"
+
     url = 'https://suppliers-api.wildberries.ru/'
     headers = {
         'accept': 'application/json',
-        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6IjljMjk3YjlmLTcxNTctNGFlZC05NmI0LTVjNDU1MWRjMjk3MiJ9.W6Rkfr3RHx6e1cuJFbHp2hwYHxl6w448of_Mxnai73A',
+        'Authorization': token,
         'Content-Type': 'application/json',
     }
 
@@ -115,7 +119,7 @@ def get_WB_stock_price_discount(imtID):
         "jsonrpc": "2.0",
         "params": {
             "imtID": imtID,
-            "supplierID": "74c22891-16b9-47c7-8e22-6ba834aa5947"
+            "supplierID": supplierID
         }
     }
     response = requests.post(url + uri, headers=headers, json=body)
@@ -123,6 +127,7 @@ def get_WB_stock_price_discount(imtID):
     barcode = response_body['result']['card']['nomenclatures'][0]['variations'][0]['barcodes'][0]  # Баркод
     nomenclature = response_body['result']['card']['nomenclatures'][0]['nmId']  # Номенклатура
     name_prod = response_body['result']['card']['addin'][1]['params'][0]['value']
+    print("id - " + str(imtID))
     print("Баркод - " + barcode)
     print("Номенклатура - " + str(nomenclature))
     print(name_prod)
@@ -130,9 +135,9 @@ def get_WB_stock_price_discount(imtID):
     # Получение стоков по баркоду
     uri = 'api/v2/stocks'
     params = {
-        'search': response_body["result"]["card"]["nomenclatures"][0]["variations"][0]["barcodes"][0],
+        'search': barcode,
         'skip': '0',
-        'take': '100'
+        'take': '1000'
     }
     response = requests.get(url + uri, headers=headers, params=params)
     response_body = response.json()
