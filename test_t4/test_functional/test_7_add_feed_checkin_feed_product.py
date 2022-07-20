@@ -33,7 +33,7 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     18) Поиск в "Feed products" добавленного товара по дате добавления
     19) Проверка значения "id" в таблице и в YML feed
     20) Проверка значения "Product" в таблице и "name" в YML feed
-    21) Проверка значения "Sale" в таблице и "oldprice" в YML feed
+    21) Проверка значения "Sale" в таблице и "price" в YML feed
     22) Проверка значения "Vendor" в таблице и в YML feed
     23) Проверка значения "Stock" в таблице и в YML feed
     24) Переход на общую страницу
