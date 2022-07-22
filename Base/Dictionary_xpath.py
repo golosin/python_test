@@ -74,8 +74,8 @@ def init_dict_xpath_product_feed(dict_init_data):
 def init_dict_xpath_base(dict_init_data):
 
     dict_xpath_base = {
-        # листинг пайплайнов -> 1й пайплайн
-        '0': "//div[@data-test-id='id-1']",
+        # листинг пайплайнов -> 1й пайплайн в листинге
+        '0': "//tbody[@class='ant-table-tbody']",
         # общая стр пайплайна -> Wildberries
         '1': "//div[text()='Wildberries']",
         # Feed Products -> 1й товар карточка
@@ -87,7 +87,9 @@ def init_dict_xpath_base(dict_init_data):
         # Edit Products -> 1й товар карточка
         '5': "//tbody[@class='ant-table-tbody']//tr[2]//td[2]/div/div/div[2]/div/div/a",
         # общая страница -> Published on marketplace
-        '6': "//div[@data-test-id='marketplaceProducts']"
+        '6': "//div[@data-test-id='marketplaceProducts']",
+        # pipline listing -> "search"
+        '7': "//input[@id='searchInDropdown']"
     }
     return dict_xpath_base
 

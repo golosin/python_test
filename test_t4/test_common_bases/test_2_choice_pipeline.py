@@ -24,7 +24,7 @@ def test_choice_pipeline(get_driver, get_init_data):
     login_T4(driver, dict_init_data, dict_xpath_login)
 
     # 2) Выбор пайплайна и МП
-    choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
+    choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed, get_init_data)
 
     # общая страница -> Feed Products (ожидание появления эллемента)
     product_feed = wait_of_element_located('ожидание кубика "Feed Products"',

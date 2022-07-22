@@ -29,7 +29,7 @@ def test_base_click_product_feed(get_driver, get_init_data):
     login_T4(driver, dict_init_data, dict_xpath_login)
 
     # 2) Выбор пайплайна и МП
-    choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
+    choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed, get_init_data)
 
     # 3) общая страница -> Feed Products (клик)
     product_feed = wait_of_element_located('выбор кубика "Feed Products"',

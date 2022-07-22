@@ -71,10 +71,17 @@ def login_T4(driver, dict_init_data, dict_xpath_login):
 
 
 # Выбор пайплайна и МП
-def choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed):
+def choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed, get_init_data):
+
+    # листинг пайплайнов -> "search"
+    search_pip = wait_of_element_located('ввод название пайцплайна в поле "Search by name or ID"',
+                                     dict_xpath_base['7'], driver)
+    search_pip.send_keys(get_init_data["pipeline"])
+    search_pip.send_keys(u'\ue007')
+
     # листинг пайплайнов -> заданный пайплайн
     login_button = wait_of_element_located('выбор указанного пайплайна',
-                                           dict_xpath_product_feed['0'], driver)
+                                           dict_xpath_base['0'], driver)
     login_button.click()
 
     # общая стр пайплайна -> Wildberries (клик)

@@ -1,5 +1,7 @@
+import time
 import xml.etree.ElementTree as ET
 # from Base_functions import get_WB_stock_price_discount
+
 
 
 def parsing_data_feed():
@@ -29,7 +31,7 @@ def parsing_data_feed():
     return [offer_data, offer_param]
 
 def my_def():
-    tree = ET.parse('product_category.xml')
+    tree = ET.parse('Sbermegamarket(1).xml')
     root = tree.getroot()
 
     shop = root.find('shop')
@@ -39,6 +41,8 @@ def my_def():
     for offer in offers.findall('offer'):
         count = count + 1
         offer_data.append(offer.get('id'))
+
+    # bar = IncrementalBar('Countdown', max=count)
 
     i = 0
     j = 0
@@ -53,6 +57,8 @@ def my_def():
                 break
             j = j + 1
         i = i + 1
+        # bar.next()
+    # bar.finish()
 
     print(repeat_id)
     return [count+1, count_id]
@@ -61,20 +67,22 @@ def my_def():
 if __name__ == '__main__':
     # test = my_def()
     # print(test)
+    # print()
 
-    dict1 = parsing_data_feed()
-    print(dict1)
+    # dict1 = parsing_data_feed()
+    # print(dict1)
+    # print()
+    # print(dict1[0][1])
+
+    # get_WB_stock_price_discount(100591961)
     print()
-    print(dict1[0][1])
-
-    # get_WB_stock_price_discount(100162873)
-    # print()
+    # get_WB_stock_price_discount(100305944)
+    print()
     # get_WB_stock_price_discount(100165832)
-    # print()
-    # get_WB_stock_price_discount(100166104)
     # print()
     # get_WB_stock_price_discount(66854865)
     #
+    # get_WB_stock_price_discount(140214536)
+
     # get_WB_stock_price_discount(100591961)
-    # get_WB_stock_price_discount(100305944)
 

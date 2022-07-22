@@ -55,7 +55,7 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     login_T4(driver, dict_init_data, dict_xpath_login)
 
     # 2) Выбор пайплайна и МП
-    choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed)
+    choice_pipeline_mp(driver, dict_xpath_base, dict_xpath_product_feed, get_init_data)
 
     # 3) общая страница -> Feeds list (клик)
     prod_feed = wait_of_element_located('выбор страницы "Feeds list"', dict_xpath_product_feed['1'], driver)
@@ -231,7 +231,6 @@ def test_add_feed_checkin_feed_product(get_driver, get_init_data):
     yes_feed = wait_of_element_located('удаление фида - "YES"',
                                         dict_xpath_product_feed['20'], driver)
     yes_feed.click()
-
 
     # # 18) Открытие карточки импортированного товара
     # xpath_name = "//tbody[@class='ant-table-tbody']/tr/td[8]/div/div/div[text()='" + str_only_data + \
